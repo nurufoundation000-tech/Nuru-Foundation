@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programming with Python | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html')
+    .then(r => r.text())
+    .then(t => {
+      document.getElementById('headerContainer').innerHTML = t;
+      if (typeof initHeader === 'function') setTimeout(initHeader, 100);
+    }).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Programming with Python</h1>
+    <p>Turn ideas into working solutions — learn Python from fundamentals to practical projects.</p>
+    <a href="register.html" class="btn btn-primary">Enroll Now</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>About the Course</h2>
+  <p>Python powers apps, automation and data science. This hands-on course takes learners from basic syntax to object-oriented programming and real-world projects.</p>
+
+  <h3>What you'll learn</h3>
+  <ul>
+    <li>Programming basics: variables, control flow, functions</li>
+    <li>Pseudocode, flowcharts, problem solving</li>
+    <li>Object-Oriented Programming (OOP)</li>
+    <li>Data structures and algorithms fundamentals</li>
+    <li>Building projects & automations</li>
+    <li>Intro to Python in data science and AI</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 6 months</p>
+    <p><strong>Level:</strong> Beginner → Intermediate</p>
+    <p><strong>Fee:</strong> KSh 8,000</p>
+    <p><strong>Requirements:</strong> Basic computer literacy, curiosity to code</p>
+  </div>
+
+  <h3>Career Paths</h3>
+  <p>Software developer, automation specialist, junior data analyst, or tech entrepreneur.</p>
+
+  <a class="btn btn-primary" href="programming-with-python.html#enroll">View Full Details & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{
+    document.getElementById('footerContainer').innerHTML = t;
+    if (typeof startCourseRotation === 'function') startCourseRotation();
+  }).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

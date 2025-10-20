@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development — Level 3 | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Web Development — Level 3</h1>
+    <p>Master full-stack development with advanced frameworks, security, and deployment practices.</p>
+    <a href="register.html" class="btn btn-primary">Apply to Level 3</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Course Focus</h2>
+  <p>Advanced techniques for building robust, secure, and scalable web applications using modern toolchains.</p>
+
+  <h3>Core Topics</h3>
+  <ul>
+    <li>Advanced React or equivalent front-end framework</li>
+    <li>Advanced back-end architectures (Node.js/Flask/Django)</li>
+    <li>Authentication, authorization and web security</li>
+    <li>Advanced database design & optimization</li>
+    <li>CI/CD and deployment best-practices</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 4 months</p>
+    <p><strong>Level:</strong> Advanced</p>
+    <p><strong>Fee:</strong> KSh 12,000</p>
+    <p><strong>Requirements:</strong> Completion of Level 2 or equivalent experience</p>
+  </div>
+
+  <h3>Capstone</h3>
+  <p>Design and deploy a full-stack project demonstrating production readiness and security awareness.</p>
+
+  <a class="btn btn-primary" href="web-development-l3.html#enroll">View Project & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

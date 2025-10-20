@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity Level 1 (Essentials) | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{
+    document.getElementById('headerContainer').innerHTML=t;
+    if (typeof initHeader==='function') setTimeout(initHeader,100);
+  }).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Cybersecurity — Level 1 (Essentials)</h1>
+    <p>Start your journey securing digital spaces — fundamentals for safe and responsible technology use.</p>
+    <a href="register.html" class="btn btn-primary">Join Cybersecurity I</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>About the Course</h2>
+  <p>This foundation course introduces learners to key cybersecurity concepts, threat awareness, and ethical practices that protect users and systems.</p>
+
+  <h3>Core Modules</h3>
+  <ul>
+    <li>Introduction to cybersecurity & digital safety</li>
+    <li>Networking basics and OS security</li>
+    <li>Malware types and detection</li>
+    <li>Safe online behaviour and privacy</li>
+    <li>Incident reporting and basic forensics</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 3 months</p>
+    <p><strong>Level:</strong> Beginner</p>
+    <p><strong>Fee:</strong> KSh 12,000</p>
+    <p><strong>Requirements:</strong> Basic computer knowledge</p>
+  </div>
+
+  <h3>Why Take This Course?</h3>
+  <p>Learn to protect yourself and others online and build the foundation for advanced security careers.</p>
+
+  <a class="btn btn-primary" href="cybersecurity-l1.html#enroll">View Details & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{
+    document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();
+  }).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

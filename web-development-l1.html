@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development — Level 1 | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Web Development — Level 1</h1>
+    <p>Create beautiful, responsive websites using HTML, CSS, and JavaScript.</p>
+    <a href="register.html" class="btn btn-primary">Start Web Dev Level 1</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Course Snapshot</h2>
+  <p>Perfect for beginners — this practical course helps learners design and code their first websites and build a portfolio.</p>
+
+  <h3>Modules</h3>
+  <ul>
+    <li>HTML structure & semantics</li>
+    <li>CSS styling & responsive design</li>
+    <li>Intro to JavaScript and interactivity</li>
+    <li>Project: Personal portfolio site</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 2 months</p>
+    <p><strong>Level:</strong> Beginner</p>
+    <p><strong>Fee:</strong> KSh 5,000</p>
+    <p><strong>Requirements:</strong> Basic computer usage</p>
+  </div>
+
+  <h3>Why This Course?</h3>
+  <p>Launch your web-building journey and show your work with a personal portfolio.</p>
+
+  <a class="btn btn-primary" href="web-development-l1.html#enroll">View & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

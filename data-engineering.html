@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Engineering | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Data Engineering</h1>
+    <p>Build the pipelines and systems that power data-driven solutions.</p>
+    <a href="register.html" class="btn btn-primary">Join Data Engineering</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Overview</h2>
+  <p>Learn database design, data warehousing, pipeline development, streaming, and cloud tools to support scalable analytics and AI.</p>
+
+  <h3>Core Topics</h3>
+  <ul>
+    <li>Databases & data modelling</li>
+    <li>Programming for data engineering (Python/SQL)</li>
+    <li>Data pipelines & ETL</li>
+    <li>Big Data tech & cloud platforms</li>
+    <li>Streaming & real-time processing</li>
+    <li>Governance, security & scalability</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 12 months</p>
+    <p><strong>Level:</strong> Advanced</p>
+    <p><strong>Fee:</strong> KSh 12,000</p>
+    <p><strong>Requirements:</strong> Strong programming fundamentals & basic DB knowledge</p>
+  </div>
+
+  <h3>Career Paths</h3>
+  <p>Data engineer, ETL developer, cloud data specialist, platform engineer.</p>
+
+  <a class="btn btn-primary" href="data-engineering.html#enroll">View Details & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Soft Skills & Orientation | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Soft Skills (Orientation)</h1>
+    <p>Foundational life and interpersonal skills to help learners succeed academically and professionally.</p>
+    <a href="register.html" class="btn btn-primary">Join Orientation</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>What This Covers</h2>
+  <p>A practical program included in orientation that builds confidence, teamwork, communication and professional habits.</p>
+
+  <h3>Topics</h3>
+  <ul>
+    <li>Verbal & written communication</li>
+    <li>Teamwork and leadership basics</li>
+    <li>Problem solving & critical thinking</li>
+    <li>Time management & professionalism</li>
+    <li>Emotional intelligence & resilience</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> Part of orientation (introductory sessions)</p>
+    <p><strong>Level:</strong> Foundational</p>
+    <p><strong>Fee:</strong> Free</p>
+    <p><strong>Requirements:</strong> Open to all enrolled learners</p>
+  </div>
+
+  <h3>Benefit</h3>
+  <p>Equip learners with practical habits and interpersonal skills that support academic success and career readiness.</p>
+
+  <a class="btn btn-primary" href="softskills.html#enroll">Find Out More</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

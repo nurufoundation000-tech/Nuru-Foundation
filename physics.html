@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Physics | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Physics</h1>
+    <p>Explore the laws of nature — motion, energy, electricity and the science behind everyday wonders.</p>
+    <a href="register.html" class="btn btn-primary">Discover Physics</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Course Overview</h2>
+  <p>Hands-on and conceptual learning that brings physics to life through experiments, problem-solving, and real-world examples.</p>
+
+  <h3>Core Modules</h3>
+  <ul>
+    <li>Mechanics: motion and forces</li>
+    <li>Energy, work and power</li>
+    <li>Electricity and magnetism basics</li>
+    <li>Waves, optics and modern physics</li>
+    <li>Experimental and practical labs</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 12 months</p>
+    <p><strong>Level:</strong> Conceptual to Applied</p>
+    <p><strong>Fee:</strong> KSh 20,000</p>
+    <p><strong>Requirements:</strong> Basic mathematics understanding & curiosity</p>
+  </div>
+
+  <h3>Outcome</h3>
+  <p>Develop scientific thinking, lab skills and a deeper appreciation for how the world works.</p>
+
+  <a class="btn btn-primary" href="physics.html#enroll">Enroll in Physics</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>
