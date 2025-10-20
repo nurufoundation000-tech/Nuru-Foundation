@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Essentials | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>AI Essentials</h1>
+    <p>Discover how AI works and how to use it responsibly — from prompting to practical applications.</p>
+    <a href="register.html" class="btn btn-primary">Explore AI Essentials</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Course Overview</h2>
+  <p>A friendly introduction to AI concepts, generative tools, and prompt engineering — designed to empower creative and practical uses of AI.</p>
+
+  <h3>Modules</h3>
+  <ul>
+    <li>Intro to AI & its history</li>
+    <li>Understanding models and datasets</li>
+    <li>Prompt engineering & practical workflows</li>
+    <li>Using AI tools for content, code, and analysis</li>
+    <li>Ethics, bias, and responsible AI use</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> Introductory</p>
+    <p><strong>Level:</strong> Foundational</p>
+    <p><strong>Fee:</strong> Free</p>
+    <p><strong>Requirements:</strong> Basic computer literacy</p>
+  </div>
+
+  <h3>Why Learn AI?</h3>
+  <p>Understand and leverage AI tools to amplify creativity, productivity and problem-solving across fields.</p>
+
+  <a class="btn btn-primary" href="ai-essentials.html#enroll">Get Started</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

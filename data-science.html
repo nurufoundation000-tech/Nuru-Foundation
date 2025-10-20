@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Science | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Data Science</h1>
+    <p>Turn data into decisions — full data science pathway from statistics to machine learning and AI.</p>
+    <a href="register.html" class="btn btn-primary">Join Data Science</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Program Overview</h2>
+  <p>Comprehensive training covering data collection, cleaning, statistical analysis, machine learning, big data and AI — completed with a capstone project.</p>
+
+  <h3>Modules</h3>
+  <ul>
+    <li>Statistics & probability for data</li>
+    <li>Python for data analysis (Pandas, NumPy)</li>
+    <li>Exploratory Data Analysis & Visualization</li>
+    <li>Machine learning fundamentals & advanced models</li>
+    <li>Big Data tools & cloud workflows</li>
+    <li>Deep learning basics and AI applications</li>
+    <li>Ethics in data & capstone project</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 12 months</p>
+    <p><strong>Level:</strong> Advanced</p>
+    <p><strong>Fee:</strong> KSh 15,000</p>
+    <p><strong>Requirements:</strong> Basic programming knowledge (Python preferred)</p>
+  </div>
+
+  <h3>Career Outcomes</h3>
+  <p>Data scientist, ML engineer, data analyst, or analytics consultant.</p>
+
+  <a class="btn btn-primary" href="data-science.html#enroll">View Details & Enroll</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>

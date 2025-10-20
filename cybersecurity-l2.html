@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cybersecurity Level 2 (Advanced) | NURU FOUNDATION</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+  fetch('header.html').then(r=>r.text()).then(t=>{document.getElementById('headerContainer').innerHTML=t; if(typeof initHeader==='function')setTimeout(initHeader,100);}).catch(e=>console.error(e));
+</script>
+
+<section class="hero-section">
+  <div class="container hero-content">
+    <h1>Cybersecurity — Level 2 (Advanced)</h1>
+    <p>Deep technical training in ethical hacking, penetration testing, and defensive strategies for modern systems.</p>
+    <a href="register.html" class="btn btn-primary">Apply for Cybersecurity II</a>
+  </div>
+</section>
+
+<section class="course-detail container">
+  <h2>Program Overview</h2>
+  <p>Advanced techniques for identifying and mitigating security vulnerabilities across networks, web apps, and systems — taught ethically and responsibly.</p>
+
+  <h3>Key Topics</h3>
+  <ul>
+    <li>Penetration testing methodology & recon</li>
+    <li>Network scanning & exploitation</li>
+    <li>Web application security & OWASP</li>
+    <li>Wireless & mobile security</li>
+    <li>Evasion, forensics, and professional reporting</li>
+  </ul>
+
+  <div class="course-meta">
+    <p><strong>Duration:</strong> 6 months</p>
+    <p><strong>Level:</strong> Advanced (requires Cybersecurity I)</p>
+    <p><strong>Fee:</strong> KSh 18,000</p>
+    <p><strong>Requirements:</strong> Completion of Cybersecurity Level 1; networking basics</p>
+  </div>
+
+  <h3>Career Paths</h3>
+  <p>Security analyst, penetration tester, incident responder, or security consultant.</p>
+
+  <a class="btn btn-primary" href="cybersecurity-l2.html#enroll">More Info & Apply</a>
+</section>
+
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+<script>
+  fetch('footer.html').then(r=>r.text()).then(t=>{document.getElementById('footerContainer').innerHTML=t; if(typeof startCourseRotation==='function')startCourseRotation();}).catch(e=>console.error(e));
+</script>
+
+</body>
+</html>
