@@ -13,15 +13,30 @@
     <header class="main-header">
         <div class="navbar">
          
-            <a href="index.html" class="logo">
-                <div class="logo-graphic">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-main">NURU</span>
-                    <span class="logo-sub">FOUNDATION</span>
-                </div>
-            </a>
+          <a href="index.html" class="logo">
+    <div class="logo-graphic">
+        <img src="logo.jpg" alt="Nuru Foundation Logo" class="logo-icon">
+    </div>
+    <div class="logo-text">
+        <span class="logo-main">NURU</span>
+        <span class="logo-sub">FOUNDATION</span>
+    </div>
+</a>
+<style>
+    .logo-graphic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-graphic .logo-icon {
+    width: 40px; /* adjust size as needed */
+    height: auto;
+    object-fit: contain;
+    /* keeps image in the same position as the icon */
+}
+
+</style>
 
           
             <nav class="main-nav">
@@ -66,5 +81,6 @@
             </div>
         </div>
     </header>
+
 
    <script src="scripts/header.js"></script>
