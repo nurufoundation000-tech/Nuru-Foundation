@@ -107,7 +107,7 @@
         }
 
        
-        .hero-section {
+        /* .hero-section {
             background: linear-gradient(135deg, var(--primary-color) 0%, #a40e94 100%);
             color: var(--text-light);
             padding: 8rem 0;
@@ -118,7 +118,23 @@
             align-items: center;
             justify-content: center;
             min-height: 70vh;
-        }
+        } */
+
+.hero-section {
+    background: 
+        linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(164, 14, 148, 0.6)), /* keeps your color overlay */
+        url('hero-bg.jpg') center/cover no-repeat; /* new background image */
+    color: var(--text-light);
+    padding: 8rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
 
         .hero-section::before {
             content: '';
@@ -582,4 +598,5 @@
                 gap: 0.8rem;
             }
         }
+
     
