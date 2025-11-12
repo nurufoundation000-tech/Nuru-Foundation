@@ -1,4 +1,5 @@
 /* ------------------ Contact Section ------------------ */
+
 .contact-section {
     padding: 6rem 0;
     background-color: var(--background-light);
@@ -10,14 +11,16 @@
     gap: 3rem;
 }
 
-/* Contact Cards Base Styling */
+/* Contact Cards Base Styling - Matches MVV Cards */
 .contact-card {
     background: var(--background-light);
-    padding: 3rem 2rem;
+    padding: 3rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 2px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-card:hover {
@@ -25,7 +28,16 @@
     box-shadow: var(--shadow-lg);
 }
 
-/* Form Card Styling */
+/* Card Headings */
+.contact-card h2 {
+    font-family: var(--font-family-heading);
+    color: var(--accent-color-1);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Contact Form Styling */
 .form-card form {
     display: flex;
     flex-direction: column;
@@ -36,15 +48,17 @@
     margin-bottom: 0.5rem;
     font-weight: 600;
     color: var(--primary-color);
+    font-size: 1.1rem;
 }
 
 .form-card input,
 .form-card textarea {
-    padding: 0.9rem 1rem;
+    padding: 1rem;
     border-radius: var(--border-radius-md);
     border: 1px solid #ccc;
     font-size: 1rem;
     margin-bottom: 1rem;
+    font-family: var(--font-family-body);
     transition: all 0.3s ease;
 }
 
@@ -52,38 +66,69 @@
 .form-card textarea:focus {
     border-color: var(--accent-color-1);
     outline: none;
-    box-shadow: 0 0 8px rgba(56,178,172,0.3);
+    box-shadow: 0 0 15px rgba(56, 178, 172, 0.3);
 }
 
-/* Info Card Styling */
+/* Submit Button Styling */
+.form-card .btn {
+    background: var(--gradient-cta);
+    color: var(--text-light);
+    font-family: var(--font-family-heading);
+    padding: 1.1rem 3rem;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+}
+
+.form-card .btn:hover {
+    transform: translateY(-7px) scale(1.04);
+    box-shadow: var(--shadow-lg);
+    background: var(--gradient-accent);
+}
+
+/* Info Card Styling - matches About Us MVV card */
 .info-card .info-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
 }
 
 .info-card .info-item i {
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--secondary-color);
-    margin-right: 1rem;
+    margin-right: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.info-card .info-item i:hover {
+    color: var(--accent-color-1);
 }
 
 .info-card .info-item p {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #555;
-}
-
-/* Button Overrides if needed */
-.form-card .btn {
-    margin-top: 1rem;
+    line-height: 1.6;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-grid { gap: 2.5rem; }
+    .contact-card h2 { font-size: 2.2rem; }
+    .form-card input, .form-card textarea { font-size: 0.95rem; }
+}
+
 @media (max-width: 768px) {
     .contact-section { padding: 4rem 1rem; }
-    .contact-card { padding: 2.5rem 1.5rem; }
+    .contact-card { padding: 2.5rem; }
+    .contact-card h2 { font-size: 2rem; }
+    .form-card input, .form-card textarea { font-size: 0.9rem; }
 }
+
 @media (max-width: 576px) {
     .contact-grid { gap: 2rem; }
-    .contact-card { padding: 2rem 1rem; }
+    .contact-card { padding: 2rem; }
+    .contact-card h2 { font-size: 1.8rem; }
+    .form-card input, .form-card textarea { font-size: 0.85rem; }
 }
