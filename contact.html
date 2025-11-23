@@ -126,17 +126,24 @@
 <body>
 
 <!-- Header -->
-<header>
-    <div class="navbar">
-        <div class="logo">NURU</div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="courses.html">Courses</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-</header>
+<script src="scripts/header.js"></script>
+<div id="headerContainer"></div>
+<script>
+    // Load Header Content and initialize it
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('headerContainer').innerHTML = data;
+                
+                // 🔥 CRITICAL FIX: Manually call the init function AFTER the HTML is loaded.
+                if (typeof initHeader === 'function') {
+                    initHeader();
+                }
+            })
+            .catch(error => console.error('Error loading header:', error));
+    });
+</script>
 
 <!-- Hero Section -->
 <section class="contact-hero">
@@ -173,14 +180,25 @@
 </section>
 
 <!-- Footer -->
-<footer>
-    <p>&copy; 2025 Nuru Foundation. All Rights Reserved.</p>
-    <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-</footer>
+<script src="scripts/footer.js"></script>
+<div id="footerContainer"></div>
+
+<script>
+    // Load Footer Content and initialize it
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footerContainer').innerHTML = data;
+                
+                // 🔥 CRITICAL FIX: Manually call the init function AFTER the HTML is loaded.
+                if (typeof startCourseRotation === 'function') {
+                    startCourseRotation();
+                }
+            })
+            .catch(error => console.error('Error loading footer:', error));
+    });
+</script>
 
 <!-- JS -->
 <script>

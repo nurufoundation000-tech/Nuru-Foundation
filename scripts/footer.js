@@ -40,7 +40,7 @@ function startCourseRotation() {
 
             const listItem = document.createElement('li');
             const link = document.createElement('a');
-            link.href = "#";
+            link.href = "../courses.html";
             
             const icon = document.createElement('i');
             icon.className = course.icon;
