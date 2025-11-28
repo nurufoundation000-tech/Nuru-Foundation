@@ -475,7 +475,7 @@
 <div id="footerContainer"></div>
 
 <script>
-    // Load Footer Content and initialize it
+
     document.addEventListener('DOMContentLoaded', function() {
         fetch('footer.html')
             .then(response => response.text())
@@ -488,7 +488,6 @@
                     yearElement.textContent = new Date().getFullYear();
                 }
 
-                // 🔥 CRITICAL FIX: Manually call the init function AFTER the HTML is loaded.
                 if (typeof startCourseRotation === 'function') {
                     startCourseRotation();
                 }

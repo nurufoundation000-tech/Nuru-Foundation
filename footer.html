@@ -170,23 +170,19 @@
     </footer>
 
     <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set current year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+        const badges = document.querySelectorAll('.badge');
+        badges.forEach(badge => {
+            badge.addEventListener('mouseenter', () => {
+                badge.style.transform = 'translateY(-3px)';
+                badge.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
 
-
-            const badges = document.querySelectorAll('.badge');
-            badges.forEach(badge => {
-                badge.addEventListener('mouseenter', () => {
-                    badge.style.transform = 'translateY(-3px)';
-                    badge.style.background = 'rgba(255, 255, 255, 0.15)';
-                });
-
-                badge.addEventListener('mouseleave', () => {
-                    badge.style.transform = 'translateY(0)';
-                    badge.style.background = 'rgba(255, 255, 255, 0.1)';
-                });
+            badge.addEventListener('mouseleave', () => {
+                badge.style.transform = 'translateY(0)';
+                badge.style.background = 'rgba(255, 255, 255, 0.1)';
             });
         });
     </script>

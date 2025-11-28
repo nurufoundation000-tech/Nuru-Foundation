@@ -154,7 +154,7 @@
 
 
                     <div class="team-member-card">
-                    <img src="https://images.unsplash.com/photo-1629482935212-e8c89c8b74f3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/c32e14edac3647e7a49f4585f94381b2/original/image.png" alt="Team Member 3">
                     <h3>Dancan Ogolla</h3>
                     <p class="role">Operations Director</p>
                    
@@ -170,7 +170,7 @@
 
 
                     <div class="team-member-card">
-                    <img src="https://images.unsplash.com/photo-1629482935212-e8c89c8b74f3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/fbfc3e32c7604df5abf9a69cc79d9489/original/ac3e1db7-924e-4ff1-a8b6-115d8c454dc2.jpg" alt="Team Member 3">
                     <h3>Ian Masinde</h3>
                     <p class="role">Technology & Systems Director</p>
                    
@@ -178,19 +178,19 @@
 
 
                     <div class="team-member-card">
-                    <img src="https://images.unsplash.com/photo-1629482935212-e8c89c8b74f3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/01b441b84a0941629ca0953db18433fb/original/image.png" alt="Team Member 3">
                     <h3>Jackson Tikani</h3>
                     <p class="role">Youth Development Coordinator</p>
                    
                 </div>
                  <div class="team-member-card">
-                    <img src="https://images.unsplash.com/photo-1629482935212-e8c89c8b74f3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/1ac188ce2b434aadad4e1b8c0f6dedcc/original/32772d47-bcee-477b-a744-e7a43b17d068.jpg" alt="Team Member 3">
                     <h3>Magdaline Muthui</h3>
                     <p class="role">Communications & Branding Director</p>
                     
                 </div>
                 <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/38bd719eb16f4bbf9d71ddc2e8b0c5bb/original/3f190e19-421a-4be2-954d-cb9aa8565919.jpg" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/a57bbfa124714c9ab1ced9404213e53c/original/image.png" alt="Team Member 3">
                     <h3>Isabellah  Buyaki</h3>
                      <p class="role">Marketing Director</p>
                     
@@ -198,7 +198,7 @@
 
 
                  <div class="team-member-card">
-                    <img src="https://images.unsplash.com/photo-1629482935212-e8c89c8b74f3?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team Member 3">
+                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/0d59efc9690a49659b3a1031295959e0/original/image.png" alt="Team Member 3">
                     <h3>Dr.Mary Ndolo</h3>
                     <p class="role">Partnerships & Community Engagement Director</p>
                     
@@ -258,7 +258,13 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footerContainer').innerHTML = data;
-                
+
+                // Set current year in footer
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+
                 // 🔥 CRITICAL FIX: Manually call the init function AFTER the HTML is loaded.
                 if (typeof startCourseRotation === 'function') {
                     startCourseRotation();
