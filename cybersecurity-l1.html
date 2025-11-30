@@ -180,7 +180,7 @@
     <div class="container">
         <h2>Ready to Become a Cyber Hero?</h2>
         <p>Join NURU FOUNDATION’s Cyber Security course today and take charge of your digital safety. Learn to protect, defend, and empower the online world!</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc7p2OT5z8qqTPD7IGqTU2PbdZJwJWtOUceL-ds26hPRPiInA/viewform?usp=sharing&ouid=108996617650224244530" 
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEpSWV8VNJZGIJi9WaWYaO7BHPffmPyhkZoDBNuvcF9QHTEg/viewform" 
         class="btn btn-primary">Enroll in Cyber Security Today!</a>
     </div>
 </section>
@@ -211,7 +211,13 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footerContainer').innerHTML = data;
-                
+
+                // Set current year in footer
+                const yearElement = document.getElementById('current-year');
+                if (yearElement) {
+                    yearElement.textContent = new Date().getFullYear();
+                }
+
                 // 🔥 CRITICAL FIX: Manually call the init function AFTER the HTML is loaded.
                 if (typeof startCourseRotation === 'function') {
                     startCourseRotation();

@@ -47,10 +47,10 @@
                         <a href="https://www.instagram.com/nuru_foundations/" class="social-link" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
+                        <a href="https://youtube.com/@nurufoundations?si=eQMWxjyiA-XiQVKW" class="social-link" aria-label="YouTube">
                             <i class="fab fa-youtube"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/company/110210196" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </div>
@@ -158,7 +158,7 @@
         
             <div class="footer-bottom">
                 <div class="copyright">
-                    &copy; 2024 NURU Foundation. All rights reserved.
+                    &copy; <span id="current-year"></span> NURU Foundation. All rights reserved.
                 </div>
                 <div class="footer-extra-links">
                     <a href="privacy-policy.html">Privacy Policy</a>
@@ -170,24 +170,23 @@
     </footer>
 
     <script>
-     
-        document.addEventListener('DOMContentLoaded', function() {
-            
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            const badges = document.querySelectorAll('.badge');
-            badges.forEach(badge => {
-                badge.addEventListener('mouseenter', () => {
-                    badge.style.transform = 'translateY(-3px)';
-                    badge.style.background = 'rgba(255, 255, 255, 0.15)';
-                });
-                
-                badge.addEventListener('mouseleave', () => {
-                    badge.style.transform = 'translateY(0)';
-                    badge.style.background = 'rgba(255, 255, 255, 0.1)';
-                });
+        const badges = document.querySelectorAll('.badge');
+        badges.forEach(badge => {
+            badge.addEventListener('mouseenter', () => {
+                badge.style.transform = 'translateY(-3px)';
+                badge.style.background = 'rgba(255, 255, 255, 0.15)';
+            });
+
+            badge.addEventListener('mouseleave', () => {
+                badge.style.transform = 'translateY(0)';
+                badge.style.background = 'rgba(255, 255, 255, 0.1)';
             });
         });
     </script>
 </body>
 
 </html>
+
