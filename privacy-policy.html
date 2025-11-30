@@ -6,9 +6,12 @@
     <title>Privacy Policy</title>
     <link rel="stylesheet" href="styles/root.css">
     <link rel="stylesheet" href="styles/legal.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header></header>
+    <div id="headerContainer"></div>
+
     <main>
         <h1>Privacy Policy for Nuru Foundation</h1>
 
@@ -54,8 +57,38 @@
 
         <p>By using our website, you hereby consent to our Privacy Policy and agree to its Terms and Conditions.</p>
     </main>
-    <footer></footer>
+
+    <div id="footerContainer"></div>
+
     <script src="scripts/header.js"></script>
     <script src="scripts/footer.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('headerContainer').innerHTML = data;
+                    if (typeof initHeader === 'function') {
+                        initHeader();
+                    }
+                })
+                .catch(error => console.error('Error loading header:', error));
+    
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footerContainer').innerHTML = data;
+                    const yearElement = document.getElementById('current-year');
+                    if (yearElement) {
+                        yearElement.textContent = new Date().getFullYear();
+                    }
+                    if (typeof startCourseRotation === 'function') {
+                        startCourseRotation();
+                    }
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
 </body>
 </html>
