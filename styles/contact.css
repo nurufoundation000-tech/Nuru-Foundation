@@ -1,134 +1,172 @@
-/* ------------------ Contact Section ------------------ */
+/* Contact Page Styles */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #50e3c2;
+    --accent-color-1: #9013fe;
+    --accent-color-2: #f093fb;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #f8f9fa;
+    --white: #fff;
+    --border-color: #e0e0e0;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.contact-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0 60px;
+    margin-bottom: 60px;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.95;
+}
+
+/* Contact Section */
 .contact-section {
-    padding: 6rem 0;
-    background-color: var(--background-light);
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-/* Contact Cards Base Styling - Matches MVV Cards */
 .contact-card {
-    background: var(--background-light);
-    padding: 3rem;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    border: 2px solid #eee;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
 }
 
 .contact-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
-/* Card Headings */
-.contact-card h2 {
-    font-family: var(--font-family-heading);
-    color: var(--accent-color-1);
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-align: center;
-}
-
-/* Contact Form Styling */
-.form-card form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-card label {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+.contact-card i {
+    font-size: 3.5rem;
     color: var(--primary-color);
-    font-size: 1.1rem;
+    margin-bottom: 20px;
+    display: block;
 }
 
-.form-card input,
-.form-card textarea {
-    padding: 1rem;
-    border-radius: var(--border-radius-md);
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-family: var(--font-family-body);
-    transition: all 0.3s ease;
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
 }
 
-.form-card input:focus,
-.form-card textarea:focus {
-    border-color: var(--accent-color-1);
-    outline: none;
-    box-shadow: 0 0 15px rgba(56, 178, 172, 0.3);
-}
-
-/* Submit Button Styling */
-.form-card .btn {
-    background: var(--gradient-cta);
+.contact-card p {
     color: var(--text-light);
-    font-family: var(--font-family-heading);
-    padding: 1.1rem 3rem;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.contact-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: var(--transition);
     border: none;
-    text-transform: uppercase;
+    cursor: pointer;
 }
 
-.form-card .btn:hover {
-    transform: translateY(-7px) scale(1.04);
-    box-shadow: var(--shadow-lg);
-    background: var(--gradient-accent);
-}
-
-/* Info Card Styling - matches About Us MVV card */
-.info-card .info-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-}
-
-.info-card .info-item i {
-    font-size: 3rem;
-    color: var(--secondary-color);
-    margin-right: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.info-card .info-item i:hover {
-    color: var(--accent-color-1);
-}
-
-.info-card .info-item p {
-    font-size: 1.15rem;
-    color: #555;
-    line-height: 1.6;
+.contact-link:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--white);
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .contact-grid { gap: 2.5rem; }
-    .contact-card h2 { font-size: 2.2rem; }
-    .form-card input, .form-card textarea { font-size: 0.95rem; }
-}
-
 @media (max-width: 768px) {
-    .contact-section { padding: 4rem 1rem; }
-    .contact-card { padding: 2.5rem; }
-    .contact-card h2 { font-size: 2rem; }
-    .form-card input, .form-card textarea { font-size: 0.9rem; }
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-hero p {
+        font-size: 1rem;
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-card {
+        padding: 30px 20px;
+    }
+
+    .contact-card i {
+        font-size: 3rem;
+    }
 }
 
-@media (max-width: 576px) {
-    .contact-grid { gap: 2rem; }
-    .contact-card { padding: 2rem; }
-    .contact-card h2 { font-size: 1.8rem; }
-    .form-card input, .form-card textarea { font-size: 0.85rem; }
+@media (max-width: 480px) {
+    .contact-hero {
+        padding: 60px 0 40px;
+    }
+
+    .contact-hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
 }
