@@ -140,101 +140,302 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
    
-    <section class="team-section">
-        <div class="container">
-            <h2>Meet the Passionate Minds Behind NURU Foundation</h2>
-            <p style="max-width: 800px; margin: 0 auto 3.5rem auto;">We are a dedicated team of educators, tech enthusiasts, and community builders, united by our passion for empowering the next generation. Each of us is committed to making your learning journey extraordinary!</p>
-            <div class="team-grid">
-                <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/454a156e35ba481a9fe4797925e5e722/original/3c87d6c5-c6fb-43a0-a3d0-85640fa20b7b.jpg" alt="Joshua Nuru, Founder of Nuru Foundation Coding School Kenya">
-                    <h3>Joshua Nuru</h3>
-                    <p class="role">Executive Director & Founder</p>   
-                </div>
-               <div class="team-member-card">
-                    <div class="member-avatar">DM</div>
-                    <h3>Daniel M. Muumbi</h3>
-                    <p class="role">Executive Vice Director</p>  
-                </div>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 <style>
+    /* Section & Grid Layout */
+    .team-section {
+        padding: 4rem 0;
+        text-align: center;
+    }
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 20px;
+    }
+
+    /* Flip Card Core Logic */
+    .team-member-card {
+        background-color: transparent;
+        perspective: 1000px;
+        height: 400px; /* Fixed height is necessary for the flip effect */
+    }
+
+    .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+        cursor: pointer;
+    }
+
+    .team-member-card:hover .card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #ffffff;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        padding: 1.5rem;
+        border: 1px solid #eee;
+    }
+
+    /* Front Styles */
+    .card-front img, .member-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1.5rem;
+        border: 4px solid var(--primary-color, #6200ea);
+    }
+
     .member-avatar {
-    width: 120px;
-    height: 80px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), #a40e94);
-    color: #fff;
-    font-weight: bold;
-    font-size: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem auto; /* centers it and adds spacing below */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-transform: uppercase;
-}
+        background: linear-gradient(135deg, var(--primary-color, #6200ea), #a40e94);
+        color: #fff;
+        font-weight: bold;
+        font-size: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+    }
 
+    .card-front h3 { margin: 10px 0 5px 0; font-size: 1.4rem; }
+    .role { color: #666; font-style: italic; font-size: 0.95rem; }
+
+    /* Back Styles */
+    .card-back {
+        background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        transform: rotateY(180deg);
+    }
+
+    .card-back h3 { margin-bottom: 1.5rem; color: var(--primary-color, #6200ea); }
+
+    .social-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .social-links a {
+        font-size: 28px;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        transform: translateY(-5px);
+        color: var(--primary-color, #6200ea);
+    }
+
+    .social-links a.whatsapp:hover { color: #25D366; }
+    .social-links a.linkedin:hover { color: #0077b5; }
+    .social-links a.phone:hover { color: #34b7f1; }
 </style>
-                <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/68172f2de5454e5ca072e95665f93bf7/original/e4af67af-7923-4e4c-8eae-455a93e0a9e0.jpg" alt="Abel Churchill Programs Director of Nuru Foundation Coding School Kenya">
-                    <h3>Abel Churchil</h3>
-                    <p class="role">Programs Director</p>
-                   
+
+<section class="team-section">
+    <div class="container">
+        <h2>Meet the Passionate Minds Behind NURU Foundation</h2>
+        <p style="max-width: 800px; margin: 0 auto 3.5rem auto;">We are a dedicated team of educators, tech enthusiasts, and community builders, united by our passion for empowering the next generation. Each of us is committed to making your learning journey extraordinary!</p>
+        
+        <div class="team-grid">
+            
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/454a156e35ba481a9fe4797925e5e722/original/3c87d6c5-c6fb-43a0-a3d0-85640fa20b7b.jpg" alt="Joshua Nuru">
+                        <h3>Joshua Nuru</h3>
+                        <p class="role">Executive Director & Founder</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Get in Touch</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
                 </div>
-
-
-                <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/c32e14edac3647e7a49f4585f94381b2/original/image.png" alt="Dancan Ogolla, Operations Director of Nuru Foundation School of Young Leaders">
-                    <h3>Dancan Ogolla</h3>
-                    <p class="role">Operations Director</p>
-                   
-                </div>
-
-
-                <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/171f0d9f8ca44c9c871202bdf864917d/original/unnamed.jpg" alt="Mercyline Kemunto, Finance & Administration Director of Nuru Foundation Programming School Kenya">
-                    <h3>Mercyline Kemunto</h3>
-                    <p class="role">Finance & Administration Director</p>
-                   
-                </div>
-
-
-                    <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/fbfc3e32c7604df5abf9a69cc79d9489/original/ac3e1db7-924e-4ff1-a8b6-115d8c454dc2.jpg" alt=" ">
-                    <h3>Ian Masinde</h3>
-                    <p class="role">Technology & Systems Director</p>
-                   
-                </div>
-
-
-                    <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/01b441b84a0941629ca0953db18433fb/original/image.png" alt="Jackson Tikani, Youth Development Coordinator of Nuru Foundation School of Young Leaders">
-                    <h3>Jackson Tikani</h3>
-                    <p class="role">Youth Development Coordinator</p>
-                   
-                </div>
-                 <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/1ac188ce2b434aadad4e1b8c0f6dedcc/original/32772d47-bcee-477b-a744-e7a43b17d068.jpg" alt="Magdaline Muthui, Communications & Branding Director of Nuru Foundation School of Young Leaders">
-                    <h3>Magdaline Muthui</h3>
-                    <p class="role">Communications & Branding Director</p>
-                    
-                </div>
-                <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/a57bbfa124714c9ab1ced9404213e53c/original/image.png" alt="Isabellah Buyaki, Marketing Director of Nuru Foundation School of Young Leaders">
-                    <h3>Isabellah  Buyaki</h3>
-                     <p class="role">Marketing Director</p>
-                    
-                </div>
-
-
-                 <div class="team-member-card">
-                    <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/0d59efc9690a49659b3a1031295959e0/original/image.png" alt="Dr.Mary Ndolo, Partnerships & Community Engagement Director of Nuru Foundation School of Young Leaders">
-                    <h3>Dr.Mary Ndolo</h3>
-                    <p class="role">Partnerships & Community Engagement Director</p>
-                    
-                </div> 
-
             </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="member-avatar">DM</div>
+                        <h3>Daniel M. Muumbi</h3>
+                        <p class="role">Executive Vice Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Connect with Daniel</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/68172f2de5454e5ca072e95665f93bf7/original/e4af67af-7923-4e4c-8eae-455a93e0a9e0.jpg" alt="Abel Churchil">
+                        <h3>Abel Churchil</h3>
+                        <p class="role">Programs Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>View Portfolio</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/c32e14edac3647e7a49f4585f94381b2/original/image.png" alt="Dancan Ogolla">
+                        <h3>Dancan Ogolla</h3>
+                        <p class="role">Operations Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Get in Touch</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/171f0d9f8ca44c9c871202bdf864917d/original/unnamed.jpg" alt="Mercyline Kemunto">
+                        <h3>Mercyline Kemunto</h3>
+                        <p class="role">Finance & Administration Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/fbfc3e32c7604df5abf9a69cc79d9489/original/ac3e1db7-924e-4ff1-a8b6-115d8c454dc2.jpg" alt="Ian Masinde">
+                        <h3>Ian Masinde</h3>
+                        <p class="role">Technology & Systems Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Tech Support</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/01b441b84a0941629ca0953db18433fb/original/image.png" alt="Jackson Tikani">
+                        <h3>Jackson Tikani</h3>
+                        <p class="role">Youth Development Coordinator</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Reach Out</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/1ac188ce2b434aadad4e1b8c0f6dedcc/original/32772d47-bcee-477b-a744-e7a43b17d068.jpg" alt="Magdaline Muthui">
+                        <h3>Magdaline Muthui</h3>
+                        <p class="role">Communications & Branding Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Let's Talk</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/a57bbfa124714c9ab1ced9404213e53c/original/image.png" alt="Isabellah Buyaki">
+                        <h3>Isabellah Buyaki</h3>
+                        <p class="role">Marketing Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Connect</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="https://cdn.gamma.app/ukmb7lc2a5ol1cl/0d59efc9690a49659b3a1031295959e0/original/image.png" alt="Dr. Mary Ndolo">
+                        <h3>Dr. Mary Ndolo</h3>
+                        <p class="role">Partnerships & Community Director</p>
+                    </div>
+                    <div class="card-back">
+                        <h3>Partnerships</h3>
+                        <div class="social-links">
+                            <a href="#" class="phone"><i class="fas fa-phone-alt"></i></a>
+                            <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
 
 <!-- Community & Global Reach Section -->
@@ -304,6 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 </html>
+
 
 
 
