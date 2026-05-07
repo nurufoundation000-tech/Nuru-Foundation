@@ -181,7 +181,7 @@
         }
        .story-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 1fr; /* equal width */
     gap: 4rem;
     align-items: center;
 }
@@ -196,17 +196,15 @@
             font-size: 1.2rem;
             line-height: 1.9;
         }
-        .story-image {
+       .story-image {
+    width: 100%;
+    max-width: 100%;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-lg);
-    transform: rotate(-3deg);
+    transform: rotate(-2deg);
     transition: transform 0.4s ease-in-out;
     border: 5px solid var(--secondary-color);
-
-    width: 100%;
-    max-width: 500px;   /* controls image size */
-    margin: auto;
 }
         .story-image:hover {
             transform: rotate(0deg) scale(1.03);
