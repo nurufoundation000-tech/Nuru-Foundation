@@ -196,23 +196,23 @@
             line-height: 1.9;
         }
         .story-image {
-            border-radius: var(--border-radius-lg);
-            /*overflow: hidden;*/
-            box-shadow: var(--shadow-lg);
-            transform: rotate(-5deg); /* Playful tilt */
-            transition: transform 0.4s ease-in-out;
-            border: 5px solid var(--secondary-color); /* Colorful border */
-        }
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* IMPORTANT */
+    box-shadow: var(--shadow-lg);
+    transform: rotate(-5deg);
+    transition: transform 0.4s ease-in-out;
+    border: 5px solid var(--secondary-color);
+}
         .story-image:hover {
             transform: rotate(0deg) scale(1.03);
             border-color: var(--primary-color);
         }
         .story-image img {
-            width: 120%;
-            height: 450px;
-            object-fit: cover;
-            display: block;
-        }
+    width: 100%;
+    height: auto; /* keeps full image visible */
+    display: block;
+    object-fit: contain;
+}
 
         /* Mission & Vision / Values Section */
         .mvv-section {
