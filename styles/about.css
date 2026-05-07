@@ -179,12 +179,13 @@
             border-top-right-radius: var(--border-radius-lg);
             box-shadow: 0 -10px 30px rgba(0,0,0,0.05); /* Soft shadow for overlap */
         }
-        .story-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* More space for text, less for image */
-            gap: 4rem;
-            align-items: center;
-        }
+       .story-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
         .story-text h2 {
             font-size: 3.5rem;
             margin-bottom: 2rem;
@@ -197,11 +198,15 @@
         }
         .story-image {
     border-radius: var(--border-radius-lg);
-    overflow: hidden; /* IMPORTANT */
+    overflow: hidden;
     box-shadow: var(--shadow-lg);
-    transform: rotate(-5deg);
+    transform: rotate(-3deg);
     transition: transform 0.4s ease-in-out;
     border: 5px solid var(--secondary-color);
+
+    width: 100%;
+    max-width: 500px;   /* controls image size */
+    margin: auto;
 }
         .story-image:hover {
             transform: rotate(0deg) scale(1.03);
@@ -209,9 +214,8 @@
         }
         .story-image img {
     width: 100%;
-    height: auto; /* keeps full image visible */
+    height: auto;
     display: block;
-    object-fit: contain;
 }
 
         /* Mission & Vision / Values Section */
